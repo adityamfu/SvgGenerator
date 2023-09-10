@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" />
+    <link rel="stylesheet" href="./lib/style.css" />
+    <link rel="icon" href="./lib/icon.ico" type="image/x-icon" />
+    <title>SvgGenerator</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="dashboard">
+        <h3>Polygons Svg Generator</h3>
+        <div class="menu">
+          <div class="options">
+            <label for="noOfPoints">Point</label>
+            <input type="range" id="noOfPoints" min="11" max="300" step="2" value="100" />
+          </div>
+          <div class="options">
+            <label for="polygonEdges">Edges</label>
+            <input type="range" id="polygonEdges" min="4" max="20" step="1" value="10" />
+          </div>
+        </div>
+
+        <div class="menu">
+          <div class="options">
+            <label for="edgeWidth">Width</label>
+            <input type="range" id="edgeWidth" min="0" max="4" step="1" value="1" />
+          </div>
+          <div class="options">
+            <div class="check">
+              <label for="ctrlSpeed" title="Speed">Animate</label>
+              <input type="checkbox" id="doAnimate" title="Animate?" />
+            </div>
+            <input type="range" id="ctrlSpeed" min=".2" max="6" step=".2" value="2" title="Speed" />
+          </div>
+        </div>
+
+        <div class="menu">
+          <div class="check">
+            <label for="showCircle">Circle's</label>
+            <input type="checkbox" id="showCircle" />
+          </div>
+          <div class="check">
+            <label for="ctrlColor" title="Color">GetColors</label>
+            <input type="checkbox" id="colorfull" />
+          </div>
+        </div>
+      </div>
+
+      <div class="monitor">
+        <svg>
+          <iframe id="bg" x="0" y="0" style="fill: #1e2126" />
+          <g id="main">
+            <g id="polygons"></g>
+            <g id="points"></g>
+          </g>
+        </svg>
+      </div>
+
+      <div id="svgSpecContainer" class="svg-spec-container">
+        <div class="svg-spec-content"></div>
+      </div>
+
+      <div class="floating-button">
+        <a id="regenerate" title="Regenerate"><i class="fa-solid fa-rotate-right fa-lg"></i></a>
+        <a id="getSVG" title="Download"><i class="fa-solid fa-cloud-arrow-down fa-lg"></i></a>
+      </div>
+    </div>
+    <script src="./lib/generate.js"></script>
+  </body>
+</html>
